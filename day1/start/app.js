@@ -5,6 +5,8 @@ htmlValue.innerHTML = 0;
 
 const increaseButton = document.getElementById('increase');
 const decreaseButton = document.getElementById('decrease');
+const saveButton = document.getElementById("save")
+const resultValue = document.getElementById('resultedValue')
 
 increaseButton.addEventListener("click", function (event) {
     if (value>=20){
@@ -23,3 +25,17 @@ decreaseButton.addEventListener("click", function (event) {
         htmlValue.innerHTML = value;
     }
 });
+
+saveButton.addEventListener('click', function(e){
+    var htmlText = resultValue.innerHTML;
+    if(htmlText[htmlText.length-1] === value.toString()){
+        alert("same as previous");
+    }
+    else if(resultValue.innerHTML  === ''){
+        resultValue.innerHTML = value;
+    }
+    else{
+
+        resultValue.innerHTML += `, ${value}`;
+    }
+})
