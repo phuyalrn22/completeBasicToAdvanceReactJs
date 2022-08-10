@@ -13,7 +13,7 @@ increaseButton.addEventListener("click", function (event) {
         value +=1;
         htmlValue.innerHTML = value;
     }
-})
+});
 
 decreaseButton.addEventListener("click", function (event) {
     if (value<=0){
@@ -22,4 +22,4 @@ decreaseButton.addEventListener("click", function (event) {
         value -=1;
         htmlValue.innerHTML = value;
     }
-})
+});
