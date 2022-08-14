@@ -11,14 +11,17 @@
     <div class="container">
         <div class="title">Registration</div>
         <form action="#" id="register">
+            <ul id="error">
+
+            </ul>
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
-                    <input type="text" placeholder="Enter your name" required>
+                    <input type="text" name="fullName" id="fullName" placeholder="Enter your name" >
                 </div>
                 <div class="input-box">
                     <span class="details">Username</span>
-                    <input type="text" placeholder="Enter your username" required>
+                    <input type="text" name="userName" id="userName" placeholder="Enter your username" >
                 </div>
                 <!-- <div class="input-box">
                     <span class="details">Email</span>
@@ -30,11 +33,12 @@
                 </div> -->
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password" placeholder="Enter your password" required>
+                    <input type="password" id="password" placeholder="Your Password" >
+
                 </div>
                 <div class="input-box">
-                    <span class="details">Confirm Password</span>
-                    <input type="password" placeholder="Confirm Your Password" required>
+                    <span class="details" name="confirmPassword">Confirm Password</span>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Your Password" >
                 </div>
             </div>
             <div class="gender-details">
@@ -62,5 +66,7 @@
             </div>
         </form>
     </div>
+    <script src="./app.js"></script>
 </body>
+
 </html>

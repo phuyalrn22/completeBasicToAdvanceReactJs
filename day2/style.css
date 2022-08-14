@@ -138,3 +138,7 @@ form .button input:hover {
     width: 0;
   }
 }
+
+#error {
+  color: red;
+}
