@@ -139,6 +139,6 @@ form .button input:hover {
   }
 }
 
-#error {
+.error {
   color: red;
 }
