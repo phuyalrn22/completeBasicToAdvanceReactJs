@@ -11,18 +11,22 @@
     <div class="container">
         <div class="title">Registration</div>
         <form action="#" id="register">
-            <ul id="error">
+            <ul id="error" class="error">
 
             </ul>
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
                     <input type="text" name="fullName" id="fullName" placeholder="Enter your name" >
+                    <div class="error" id="fullNameError"></div>
                 </div>
+
                 <div class="input-box">
                     <span class="details">Username</span>
                     <input type="text" name="userName" id="userName" placeholder="Enter your username" >
+                    <div class="error" id="userNameError"></div>
                 </div>
+
                 <!-- <div class="input-box">
                     <span class="details">Email</span>
                     <input type="text" placeholder="Enter your email" required>
