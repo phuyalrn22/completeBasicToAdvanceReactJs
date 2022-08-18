@@ -89,6 +89,11 @@
     },
 ];
 */
+let cartCount =0;
+let cartItems  = [];
+let productList = [];
+const cart = document.getElementById("cart");
+cart.innerHTML = cartCount;
 function makeHtml(products){
     return `
     <!-- Card  -->
@@ -115,11 +120,11 @@ function makeHtml(products){
             </div>
             <!-- Card info end here -->
             <!-- Button For Card -->
-            <div class="p-3 shoe text-center text-white mt-3-cursor">
+            <button class="p-3 shoe text-center text-white mt-3-cursor" onclick="changeCart('${products.id}')">
                 <span class="text-uppercase">
                     Add to cart
                 </span>
-            </div>
+            </button>
         </div>
     </div>
     <!-- Card  End Here -->
@@ -137,6 +142,7 @@ const fetchData = ()=>{
     })
     .then((data)=>{
             const productRow = document.getElementById("productRow");
+            productList =data;
             let productHtml = "";
             for(let i=0;i<data.length;i++){
                 productHtml += makeHtml(data[i]);
@@ -157,3 +163,15 @@ for(let i=0;i<products.length;i++){
 }
 productRow.innerHTML = productHtml;
 */
+
+const changeCart = (products)=>{
+    const exitCart = cartItems.filter(x=> x===products)
+    if(exitCart.length>0){
+        cartItems = cartItems.filter(x=> x!==products);
+        cartCount--;
+    }else{
+        cartCount++;
+        cartItems.push(products);
+    }
+    cart.innerHTML = cartCount;
+}
