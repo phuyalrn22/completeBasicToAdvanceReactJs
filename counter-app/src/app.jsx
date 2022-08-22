@@ -14,12 +14,15 @@ const App = () => {
     }
     setValue(value - 1);
   };
-  const [val, setVal] = useState(value);
+  const [val, setVal] = useState('');
   const saveValue = (e) => {
-    const res = document.getElementById('res');
-    if(res.innerHTML === ''){
+    if(setVal.length === 0){
+      setVal(value.toString());
+    }else if(val[val.length-1]==value){
+      alert("saved value cannot be same as previous")
+    }else{
+    setVal(val+", "+ value.toString());
     }
-    res.innerHTML += ', ' + value;
   };
   return (
     <div className="app">
@@ -32,7 +35,7 @@ const App = () => {
         <button onClick={saveValue}>Save People</button>
       </div>
       <div className="result">
-        Saved Value is = <span id = 'res'></span>
+        Saved Value is = <span>{val}</span>
       </div>
     </div>
   );
