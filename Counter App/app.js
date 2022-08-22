@@ -31,11 +31,11 @@ decreaseBtn.addEventListener("click", function (e){
 // For Logic to Save People
 saveBtn.addEventListener("click", function (e){
     var htmlText = savePeople.innerHTML;
-    if(htmlText.length[htmlText-1]===value.toString()){
+    if(htmlText[htmlText-1]===value.toString()){
             alert("Same As Privious");
         }
     else if(htmlText===''){
-            savePeople.innerHTML += value;
+            savePeople.innerHTML = value;
         }
     else{
             savePeople.innerHTML += `, ${value}`;
