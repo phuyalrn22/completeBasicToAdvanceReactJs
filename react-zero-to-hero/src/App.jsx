@@ -1,8 +1,10 @@
 import React from 'react'
-
+//import form from './Components'
 const App = () => {
   return (
-    <div>App</div>
+    <div className='App'>
+      <h1>Hello</h1>
+    </div>
   )
 }
 
