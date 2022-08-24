@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContent } from "./context/ProductContext";
 
 const Product = ({ product }) => {
+  const { addToCart } = useContext(ProductContent);
+
   return (
     <div className="col-md-4">
       <div className="card mt-3">
@@ -26,7 +29,10 @@ const Product = ({ product }) => {
             </div>
           </div>
         </div>
-        <button className="p-3 shoe text-center text-white mt-3-cursor btn-success ">
+        <button
+          className="p-3 shoe text-center text-white mt-3-cursor btn-success "
+          onClick={() => addToCart(product)}
+        >
           <span className="text-uppercase">Add to cart</span>
         </button>
       </div>

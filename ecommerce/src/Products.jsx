@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ProductContent } from "./context/ProductContext";
 import Product from "./Product";
 
-const Products = () => {
-  const [products, setProducts] = useState([]);
+const Products = ({}) => {
+  const { products } = useContext(ProductContent);
 
-  const fetchData = async () => {
-    try {
-      const res = await fetch(
-        "https://62bd8db5c5ad14c110c16cc2.mockapi.io/product",
-        {
-          method: "get",
-        }
-      );
-      const data = await res.json();
-      setProducts(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <div className="container mb-5">
       <div className="row">
