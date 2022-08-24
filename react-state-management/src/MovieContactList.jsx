@@ -12,12 +12,12 @@ export const MovieProdiver = (props) => {
           price: "Rs.400",
         },
         {
-          id: 123,
+          id: 143,
           name: "Hulk",
           price: "Rs.300",
         },
         {
-          id: 123,
+          id: 113,
           name: "Ghost Rider",
           price: "Rs.500",
         },
