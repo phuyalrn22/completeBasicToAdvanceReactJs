@@ -1,11 +1,25 @@
-import React from 'react'
-//import form from './Components'
-const App = () => {
-  return (
-    <div className='App'>
-      <h1>Hello</h1>
-    </div>
-  )
-}
+import React, { useContext } from "react";
+import { ProductContent } from "./context/ProductContext";
+import Products from "./Components/Products";
+import ProductList from "./Components/ProductList";
 
-export default App
+const App = () => {
+  const { cart } = useContext(ProductContent);
+
+  return (
+    <>
+      <nav className="navbar bg-light">
+        <div className="container-fluid">
+          <div>
+            Cart <span>{cart.length}</span>
+          </div>
+        </div>
+      </nav>
+      <Products />
+      <hr/>
+      <ProductList />
+    </> 
+  );
+};
+
+export default App;
