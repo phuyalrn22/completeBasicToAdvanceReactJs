@@ -1,3 +1,4 @@
+import styled from "styled-components"
 const Nav = () => {
 
     return(
@@ -7,4 +8,5 @@ const Nav = () => {
         </div>
     )
 }
+
 export default Nav

@@ -2,15 +2,16 @@ import React from "react";
 //import Products from "./Products";
 import { ProductContent } from "../context/ProductContext";
 
-const ProductList = ({ products }) => {
-  const  { products } = useContext(ProductContent);
+const ProductList = () => {
+  const  { cart } = useContext(ProductContent);
+  const cartList = cart.map((carts) =>  carts)
   return (
     <>
       <div className="container">
         <div className="d-flex justify-content-between">
           <div>
             <img
-              src={products.thumbnail}
+              src={cartList.thumbnail}
               alt="laptop"
               className="rounded"
               width="160"

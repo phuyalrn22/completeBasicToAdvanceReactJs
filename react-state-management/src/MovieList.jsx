@@ -1,10 +1,10 @@
 import React from "react";
 import {  useContext } from "react";
-import { MovieProdiver } from "./MovieContactList";
+import { MovieContext } from "./MovieContactList";
 import Movie from "./Movie";
 
 const MovieList = () => {
-  const [movie,setMovie] = useContext(MovieProdiver);
+  const [movie,setMovie] = useContext(MovieContext);
 
   return (
     <div>
