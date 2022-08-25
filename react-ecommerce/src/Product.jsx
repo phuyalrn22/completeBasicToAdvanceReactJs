@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductContent } from './context/ProductContext';
 
-const Product = ({product,addToCart}) => {
+const Product = ({product}) => {
 //    const product = props.product;
+  const {addToCart} = useContext(ProductContent);
   return (
     // Card  Start
     <div className="col-md-4">
