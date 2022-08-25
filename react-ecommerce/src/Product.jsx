@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Product = ({product}) => {
+const Product = ({product,addToCart}) => {
 //    const product = props.product;
   return (
     // Card  Start
@@ -24,7 +24,7 @@ const Product = ({product}) => {
                     </div>
                 </div>
             </div>
-            <button className="p-3 shoe text-center text-white mt-3-cursor btn-success">
+            <button className="p-3 shoe text-center text-white mt-3-cursor btn-success" onClick={()=>addToCart(product)}>
                 <span className="text-uppercase">
                     Add to cart
                 </span>
