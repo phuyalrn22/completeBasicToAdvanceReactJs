@@ -1,4 +1,6 @@
-
+const cartCount = 0;
+const cartItem = document.getElementById("cartItem");
+cartItem.innerHTML = cartCount;
 function makeHtml(product){
     return `
     <div class="col-sm-4 mb-3">
@@ -10,7 +12,7 @@ function makeHtml(product){
                         <p class="card-text"> ${product.price}</p>
                         <p class="card-text"> ${product.oldPrice}</p>
                         <p class="card-text"> ${product.description}</p>
-                        <a href="#" class="btn btn-primary">Add to cart</a>
+                        <button class="btn btn-primary">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -41,3 +43,9 @@ const fetchData = () => {
     });
 };
 fetchData();
+
+// const cartItem = document.getElementById("cartItem");
+const changeCart = () => {
+    cartCount++;
+    cartItem.innerHTML = cartCount;
+}
