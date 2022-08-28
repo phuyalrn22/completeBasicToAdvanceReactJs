@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import Products from "./Products";
 import {ProductProvider, ProductContent } from "./context/ProductContext";
+import Navbar from "./component/Navbar";
 
 const App = () => {
   const {cart,addToCart} = useContext(ProductContent);
   return (
     <>
+      <Navbar/>
       <nav class="navbar bg-light">
         <div class="container-fluid">
           <div>
