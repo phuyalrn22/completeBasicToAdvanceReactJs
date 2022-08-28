@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { ToastContext } from "./ToastContext";
 
 export const ProductContent = createContext();
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const { displayToast } = useContext(ToastContext);
 
   const fetchData = async () => {
     try {
@@ -27,9 +29,12 @@ const ProductProvider = ({ children }) => {
   const addToCart = (product) => {
     const exists = cart.filter((x) => x.id === product.id).length > 0;
     if (exists) {
+      displayToast(`${product.name} remove successfully`);
+
       const newCart = cart.filter((x) => x.id !== product.id);
       setCart(newCart);
     } else {
+      displayToast(`${product.name} added successfully`);
       setCart([...cart, product]);
       console.log(cart);
     }

@@ -3,18 +3,36 @@ import { ProductContent } from "./context/ProductContext";
 import Products from "./Products";
 
 const App = () => {
-  const { cart } = useContext(ProductContent);
+  const { cart, addToCart } = useContext(ProductContent);
 
   return (
     <>
-      <nav className="navbar bg-light">
-        <div className="container-fluid">
-          <div>
-            Cart <span>{cart.length}</span>
-          </div>
-        </div>
-      </nav>
       <Products />
+      <div className="container">
+        <div>Cart List</div>
+        {cart.map((c) => (
+          <div
+            className="row d-flex"
+            style={{
+              margin: "10px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
+            <img
+              src={c.thumbnail}
+              style={{ height: "50px", width: "50px" }}
+              alt=""
+              srcset=""
+            />
+            <div style={{ width: "auto" }}>{c.name}</div>
+            <button style={{ width: "auto" }} onClick={() => addToCart(c)}>
+              Remove from cart
+            </button>
+          </div>
+        ))}
+      </div>
     </>
   );
 
