@@ -4,9 +4,11 @@ import App from "./App";
 import NavBar from "./components/NavBar";
 import ProductProvider from "./context/ProductContext";
 import ToastProvider from "./context/ToastContext";
-import About from "./Pages/about";
 import Contact from "./Pages/contact";
+import Login from "./Pages/login";
 import ProductDetails from "./Pages/productDetails";
+import Description from "./Pages/productDetails/components/Description";
+import Review from "./Pages/productDetails/components/Review";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,9 +18,14 @@ root.render(
         <NavBar />
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/details/:id" element={<ProductDetails />} />
+          <Route path="/details/:id" element={<ProductDetails />}>
+            <Route path="" element={<Description />}></Route>
+            <Route path="description" element={<Description />}></Route>
+            <Route path="review" element={<Review />}></Route>
+          </Route>
           <Route path="/cart" element={<App />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </ProductProvider>
