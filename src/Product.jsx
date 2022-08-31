@@ -6,12 +6,12 @@ const Product = ({ product }) => {
   const { addToCart } = useContext(ProductContent);
 
   return (
+    <div className="col-md-4">
+      <div className="card mt-3">
     <Link style={{
       textDecoration: "none",
       color: "black",
     }} to={`/details/${product.id}`}>
-      <div className="col-md-4">
-        <div className="card mt-3">
           <div className="align-items-center p-2 text-center">
             <img
               src={product.thumbnail}
@@ -34,6 +34,7 @@ const Product = ({ product }) => {
               </div>
             </div>
           </div>
+          </Link>
           <button
             className="p-3 shoe text-center text-white mt-3-cursor btn-success "
             onClick={() => addToCart(product)}
@@ -42,7 +43,6 @@ const Product = ({ product }) => {
           </button>
         </div>
       </div>
-    </Link>
   );
 };
 

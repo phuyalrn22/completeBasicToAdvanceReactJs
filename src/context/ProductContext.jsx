@@ -36,7 +36,6 @@ const ProductProvider = ({ children }) => {
     } else {
       displayToast(`${product.name} added successfully`);
       setCart([...cart, product]);
-      console.log(cart);
     }
   };
   return (
