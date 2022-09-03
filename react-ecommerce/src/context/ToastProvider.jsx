@@ -34,4 +34,4 @@ import React, { createContext, useState } from 'react'
   )
 }
 
-export default ToastProvider
+export default ToastProvider;

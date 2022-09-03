@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { ProductContent } from './context/ProductContext';
-
+import {Link} from 'react-router-dom';
 const Product = ({product}) => {
 //    const product = props.product;
   const {addToCart} = useContext(ProductContent);
   return (
-    // Card  Start
+   <Link to={`/details/${product.id}`}>
     <div className="col-md-4">
         <div className="card product mt-3">
             <div className="product1 align-items-center p-2 text-center">
@@ -33,6 +33,7 @@ const Product = ({product}) => {
             </button>
         </div>
     </div>
+   </Link> 
 
   );
 }
