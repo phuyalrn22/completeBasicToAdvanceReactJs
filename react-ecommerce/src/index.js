@@ -8,6 +8,8 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Navbar from "./component/Navbar";
 import ProductDetails from "./pages/ProductDetails";
+import Description from "./pages/ProductDetails/components/Description";
+import Review from "./pages/ProductDetails/components/Review";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <ToastProvider>
@@ -16,7 +18,11 @@ root.render(
          <Navbar/>
           <Routes>
             <Route path="/" element={<App/>} />
-            <Route path ="/details/:id" element={<ProductDetails/>} />
+            <Route path ="/details/:id" element={<ProductDetails/>}>
+              <Route path="" element={<Description/>}/>
+              <Route path="description" element={<Description/>}/>
+              <Route path="review" element={<Review/>}/>
+            </Route>
             <Route path="/about" element={<About/>} />
             <Route path ="/contact" element={<Contact/>} />
           </Routes>

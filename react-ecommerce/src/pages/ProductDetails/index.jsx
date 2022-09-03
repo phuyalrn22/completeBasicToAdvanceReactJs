@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams, Outlet} from 'react-router-dom';
 import Description from './components/Description';
 import Review from './components/Review';
 const ProductDetails = () => {
@@ -22,7 +22,6 @@ const ProductDetails = () => {
       useEffect(() => {
         fetchData()
       }, []);
-      const [showDescription, setShowDescription] = useState(true);
   return (
     <div className="container">
         <div className="row">
@@ -63,16 +62,14 @@ const ProductDetails = () => {
         </div><hr/><hr/>
         <div className="row">
          <div className='mt-4'>
-            <button className="btn btn-primary mx-5"
-            onClick={()=>{
-              setShowDescription(false);
-            }}>Review</button>
-            <button className="btn btn-primary mx-5"
-             onClick={()=>{
-                setShowDescription(true);
-              }}>Description</button>
+          <Link to={`/details/${id}/review`}>
+             <button className="btn btn-primary mx-5">Review</button>
+          </Link>
+          <Link to={`/details/${id}/description`}>
+            <button className="btn btn-primary mx-5">Description</button>
+          </Link>   
           </div>
-          {showDescription ? <Description /> : <Review />}
+          <Outlet/>
         </div>
  </div>
   )
