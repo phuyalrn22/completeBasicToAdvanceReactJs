@@ -10,6 +10,7 @@ import Navbar from "./component/Navbar";
 import ProductDetails from "./pages/ProductDetails";
 import Description from "./pages/ProductDetails/components/Description";
 import Review from "./pages/ProductDetails/components/Review";
+import Login from "./pages/login";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <ToastProvider>
@@ -25,6 +26,7 @@ root.render(
             </Route>
             <Route path="/about" element={<About/>} />
             <Route path ="/contact" element={<Contact/>} />
+            <Route path="/login" element={<Login/>} />
           </Routes>
         </BrowserRouter>
       </ProductProvider>
