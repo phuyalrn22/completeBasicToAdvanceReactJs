@@ -1,0 +1,15 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "learning typescript",
+  "main": "index.ts",
+  "author": "Aryan Phuyal",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node ./dist/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}
