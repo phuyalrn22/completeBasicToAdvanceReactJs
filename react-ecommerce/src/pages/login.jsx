@@ -3,19 +3,29 @@ import { useState } from 'react';
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    name:{
-        value:"",
-        error:""
-    },
-    email:{
-        value:"",
-        error:""
-    },
-    password:{
-        value:"",
-        error:""
+    isSubmitting:false,
+    isValid:false,
+    form:{
+        email:{
+            validator:(email)=>{
+                if(!email.includes("@")){
+                    return "Email is Not Valid!!";
+                }
+            },
+            value:"",
+            error:""
+        },
+        password:{
+            validator:(password)=>{
+                if(password.length<3){
+                    return "Password is Not Valid!!";
+                }
+            },
+            value:"",
+            error:""
+        }
     }
-  })
+})
   const validator = (formData) =>{
     if(!formData.email.value.includes("@")){
         formData.email.error="Email is Not Valid!!";
@@ -27,30 +37,32 @@ const Login = () => {
     const newData = validator(formData);
     setFormData({...newData});
   }
+  const handleInputChange = (e) =>{
+    const newFormData = {...formData};
+    newFormData.form[e.target.name].value = e.target.value;
+    let error = newFormData.form[e.target.name].validator(e.target.value);
+    if(error){
+        newFormData.form[e.target.name].error = error;
+    }else{
+        newFormData.form[e.target.name].error = "";
+    }
+    setFormData(newFormData);
+  }
   return (
     <form onSubmit={submitHandler}>
         <div className="container">
             <div className="row">
                 <div className="col-md-8">
-                    Full Name: 
-                    <input type="text" name="name" id="name" className='form-control my-4' 
-                    value={formData.name.value} onChange={(e)=>{
-                        setFormData({...formData,name:{value:e.target.value}});
-                    }}/>
-                    <span className="text-danger">Name is Not Valid!!</span><br/>
                     Enter Your Email:
                     <input type="text" name="email" id="email" className='form-control my-4' 
-                    value={formData.email.value} onChange={(e)=>{
-                        setFormData({...formData,email:{value:e.target.value}})
-                    }}/>
-                    {formData.email.error && (
-                    <span className="text-danger">{formData.email.error}</span>)}<br/>
+                    value={formData.form.email.value} onChange={handleInputChange}/>
+                    {formData.form.email.error && (
+                    <span className="text-danger">{formData.form.email.error}</span>)}<br/>
                     Enter Your Password:
                     <input type="password" name="password" id="password" className='form-control my-4'
-                    value={formData.password.value} onChange={(e)=>{
-                        setFormData({...formData,password:{password:e.target.password}})
-                    }}/>
-                    <span className="text-danger">Password is Not Valid!!</span>
+                    value={formData.form.password.value} onChange={handleInputChange}/>
+                    {formData.form.password.error && (
+                    <span className="text-danger">{formData.form.password.error}</span>)}<br/>
                 </div>
             </div>
             <button type="submit" className='btn btn-primary'>Submit</button>
