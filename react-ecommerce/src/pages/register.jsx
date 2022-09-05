@@ -1,4 +1,4 @@
-import { Formik } from 'formik';
+import { Formik,Field,Form } from 'formik';
 import React from 'react';
 
 const register = () => {
@@ -23,21 +23,21 @@ const register = () => {
                 email:"",
                 password:""
             }}>
-                {({handleChange, handleSubmit})=> (
-                <form onSubmit={handleSubmit}>
+                {()=> (
+                <Form>
                  <div className="container">
                     <div className="row">
                         <div className="col-md-8">
                             Enter Your Email:
-                            <input type="text" name="email" className='form-control my-4'onChange={handleChange}/>
+                            <Field type="text" name="email" className='form-control my-4'/>
                             
                             Enter Your Password:
-                            <input type="password" name="password" className='form-control my-4' onChange={handleChange}/>
+                            <Field type="password" name="password" className='form-control my-4'/>
                         </div>
                     </div>
                     <button type="submit" className='btn btn-primary'>Submit</button>
                  </div>
-                </form>)}
+                </Form>)}
             </Formik>
       </div>
     </div>
