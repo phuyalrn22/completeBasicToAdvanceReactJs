@@ -10,7 +10,6 @@ const App = () => {
         method: "get",
       });
       const data = await res.json();
-      
       setProducts(data);
     }catch (err){
       console.log(err);

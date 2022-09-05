@@ -5,7 +5,7 @@ const Products = ({products, addToCart}) => {
     <div className="container mb-5">
       <div className="row">
         {products.map((product) => (
-          <Product product={product} addToCart = {addToCart} />
+          <Product key={product.id} product={product} addToCart = {addToCart} />
         ))}
       </div>
     </div>
