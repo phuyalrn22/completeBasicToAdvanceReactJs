@@ -11,6 +11,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Description from "./pages/ProductDetails/components/Description";
 import Review from "./pages/ProductDetails/components/Review";
 import Login from "./pages/login";
+import Register from "./pages/register";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <ToastProvider>
@@ -27,6 +28,7 @@ root.render(
             <Route path="/about" element={<About/>} />
             <Route path ="/contact" element={<Contact/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register/>} />
           </Routes>
         </BrowserRouter>
       </ProductProvider>
