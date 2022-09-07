@@ -1,10 +1,8 @@
 "use strict";
-const test = (a) => {
-    if (typeof a === "string") {
-        return a.length;
-    }
-    else {
-        return a.toString.length;
-    }
+const calculate = (a, b, cb) => {
+    let sum = a + b;
+    cb(sum.toString());
 };
-console.log(test("rajkumar"));
+console.log(calculate(12, 12, (a) => {
+    return 12;
+}));

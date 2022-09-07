@@ -100,3 +100,36 @@
 // }
 // console.log(test("rajkumar"));
 
+//tuple
+// var a: [string,number];
+// a = ["Rajkumar", 12];
+// console.log(a);
+
+//define type in function
+// const sum:(a:number,b:number)=>number = (a:number,b:number) =>{
+//     return a + b;
+// }
+// console.log(sum(6,3));
+
+//define optional case in function
+// const sum:(a?:number,b?:number)=>number=(a,b)=>{
+//    return (a || 12) + (b || 24);
+// }
+// console.log(sum());
+// console.log(sum(10,10));
+
+// const sum:(a?:number,b?:number)=>number = (a=12,b=14)=>{
+//     return a + b;
+// }
+// console.log(sum(12,34));
+
+//type define in calback function
+// const calculate = (a:number, b:number, cb:(a:string)=>number)=>{
+//     let sum = a + b;
+//     cb(sum.toString());
+
+// }
+// console.log(calculate(12,12,(a)=>{
+//     return 12;
+// }));
+
