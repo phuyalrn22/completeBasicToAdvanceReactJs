@@ -1,0 +1,35 @@
+
+.b1{
+    background: rgb(226, 238, 237);
+}
+.container{
+    margin-top: 110px !important;
+}
+.card{
+    border: none !important;
+    outline: none !important;
+    background: #fff !important;
+    border-radius: 20px !important;
+}
+.card:hover{
+    transform: translate(-15px) !important;
+    transition: transform .3s !important;
+}
+.text1{
+    font-size: 15px;
+    color: #1317ff;
+}
+.info{
+    line-height: 17px;
+}
+.star{
+    color: #fbc02d;
+}
+.cost span{
+    color: #fb3531;
+    font-weight: bold;
+    font-size: 20px;
+}
+.shoe{
+    background: green;
+}
